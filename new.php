@@ -11,6 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $company = filter_input(INPUT_POST, 'company');
     $name = filter_input(INPUT_POST, 'name');
     $email = filter_input(INPUT_POST, 'email');
+    
     $errs = insertValidate($company, $name, $email);
     if (empty($errs)) {
         addCustomer($company, $name, $email);
