@@ -22,10 +22,10 @@ function findCustomer()
 {
     $dbh = connectDb();
     $sql = <<<EOM
-        SELECT
-            *
-        FROM
-            customers;
+    SELECT
+        *
+    FROM
+        customers;
     EOM;
     $stmt = $dbh->prepare($sql);
     $stmt->execute();
@@ -36,11 +36,11 @@ function addCustomer($company, $name, $email)
 {
     $dbh = connectDb();
     $sql = <<<EOM
-        INSERT INTO
-            customers
-            (company, name, email)
-            VALUES
-            (:company, :name, :email);
+    INSERT INTO
+        customers
+        (company, name, email)
+        VALUES
+        (:company, :name, :email);
     EOM;
     $stmt = $dbh->prepare($sql);
     $stmt->bindParam(':company', $company, PDO::PARAM_STR);
@@ -53,12 +53,12 @@ function findCustomerForId($id)
 {
     $dbh = connectDb();
     $sql = <<<EOM
-        SELECT
-            *
-        FROM
-            customers
-        WHERE
-            id = :id;
+    SELECT
+        *
+    FROM
+        customers
+    WHERE
+        id = :id;
     EOM;
     $stmt = $dbh->prepare($sql);
     $stmt->bindParam(':id', $id, PDO::PARAM_INT);
@@ -70,14 +70,14 @@ function editCustomer($id, $company, $name, $email)
 {
     $dbh = connectDb();
     $sql = <<<EOM
-        UPDATE
-            customers
-        SET
-            company = :company,
-            name = :name,
-            email = :email
-        WHERE
-            id = :id;
+    UPDATE
+        customers
+    SET
+        company = :company,
+        name = :name,
+        email = :email
+    WHERE
+        id = :id;
     EOM;
     $stmt = $dbh->prepare($sql);
     $stmt->bindParam(':id', $id, PDO::PARAM_INT);
@@ -138,5 +138,3 @@ function h($str)
 {
     return htmlspecialchars($str, ENT_QUOTES, 'UTF-8');
 }
-
-?>

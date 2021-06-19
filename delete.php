@@ -6,5 +6,3 @@ $id = filter_input(INPUT_GET, 'id');
 deleteCustomer($id);
 header('Location: index.php');
 exit;
-
-?>

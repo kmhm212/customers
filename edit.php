@@ -16,6 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $company = filter_input(INPUT_POST, 'company');
     $name = filter_input(INPUT_POST, 'name');
     $email = filter_input(INPUT_POST, 'email');
+
     $errs = insertEditValidate($customer, $company, $name, $email);
     if (empty($errs)) {
         editCustomer($id, $company, $name, $email);
@@ -29,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <!DOCTYPE html>
 <html lang="ja">
 
-<?= include_once __DIR__ . '/_head.html' ?>
+<?php include_once __DIR__ . '/_head.html' ?>
 
 <body>
     <div class="wrapper">

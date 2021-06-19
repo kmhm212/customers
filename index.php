@@ -5,11 +5,10 @@ $customers = findCustomer();
 
 ?>
 
-
 <!DOCTYPE html>
 <html lang="ja">
 
-<?= include_once __DIR__ . '/_head.html' ?>
+<?php include_once __DIR__ . '/_head.html' ?>
 
 <body>
     <div class="wrapper">
