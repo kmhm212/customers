@@ -39,7 +39,7 @@ function addCustomer($company, $name, $email)
         INSERT INTO
             customers
             (company, name, email)
-            VALUE
+            VALUES
             (:company, :name, :email);
     EOM;
     $stmt = $dbh->prepare($sql);
