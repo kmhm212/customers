@@ -39,7 +39,7 @@ function addCustomer($company, $name, $email)
     INSERT INTO
         customers
         (company, name, email)
-        VALUES
+    VALUES
         (:company, :name, :email);
     EOM;
     $stmt = $dbh->prepare($sql);
@@ -91,10 +91,10 @@ function deleteCustomer($id)
 {
     $dbh = connectDb();
     $sql = <<<EOM
-        DELETE FROM
-            customers
-        WHERE
-            id = :id;
+    DELETE FROM
+        customers
+    WHERE
+        id = :id;
     EOM;
     $stmt = $dbh->prepare($sql);
     $stmt->bindParam(':id', $id, PDO::PARAM_INT);
